@@ -1,7 +1,7 @@
 import './style.scss';
 import { useSelector } from 'react-redux';
 
-import List from '../List';
+import List from 'components/List';
 
 
 export default function TodoList() {

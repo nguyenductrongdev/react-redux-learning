@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Field, reduxForm, reset } from 'redux-form';
 
-import { createTask } from '../../services/actions/task';
+import { createTask } from 'services/actions/task';
 
 
 

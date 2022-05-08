@@ -1,6 +1,6 @@
-import TodoListForm from '../../components/forms/TodoListForm';
+import TodoListForm from 'components/forms/TodoListForm';
 
-import TodoList from '../../components/TodoList';
+import TodoList from 'components/TodoList';
 
 
 function TodoPage() {

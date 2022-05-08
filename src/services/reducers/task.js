@@ -1,4 +1,4 @@
-import { CREATE_TASK } from '../actions/task';
+import { CREATE_TASK } from 'services/actions/task';
 
 const initialState = {
     tasks: []
