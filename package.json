@@ -1,14 +1,19 @@
 {
-  "name": "tic-tac-toe",
+  "name": "device_mangement_website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "4.0.1",
+    "redux": "^4.2.0",
+    "redux-form": "^8.3.8",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
