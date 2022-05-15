@@ -1,20 +1,11 @@
+import { createReducer } from '@reduxjs/toolkit';
 import { CREATE_TASK } from 'services/actions/task';
+
 
 const initialState = {
     tasks: []
 }
 
-const taskReducer = (state = initialState, action) => {
-
-    switch (action.type) {
-        case CREATE_TASK:
-            return {
-                tasks: [...state.tasks, action.payload.task]
-            }
-
-        default:
-            return state;
-    }
-}
-
-export default taskReducer;
+export default createReducer(initialState, {
+    [CREATE_TASK]: (state, action) => ({ tasks: state.tasks.concat(action.payload.task) }),
+})
