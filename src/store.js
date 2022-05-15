@@ -1,6 +1,8 @@
-import rootReducer from 'services/reducers/';
-import { createTask } from 'services/actions/task';
+// import rootReducer from 'services/reducers/';
+import taskReducer from 'services/taskSlice';
+import { createTask } from 'services/taskSlice';
 import { configureStore } from '@reduxjs/toolkit'
+import { reducer as formReducer } from 'redux-form';
 
 
 const replaceMiddleware = store => next => action => {
@@ -16,7 +18,10 @@ const replaceMiddleware = store => next => action => {
 
 
 export default configureStore({
-    reducer: rootReducer,
+    reducer: {
+        task: taskReducer,
+        form: formReducer,
+    },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(replaceMiddleware),
     devTools: process.env.NODE_ENV !== 'production',
 })
