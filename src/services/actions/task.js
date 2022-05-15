@@ -1,11 +1,7 @@
-const CREATE_TASK = "CREATE_TASK";
+import { createAction } from '@reduxjs/toolkit';
 
-const createTask = task => ({
-    type: CREATE_TASK,
-    payload: { task }
-})
+const createTask = createAction("CREATE_TASK");
 
 export {
-    CREATE_TASK,
     createTask,
-};
+}

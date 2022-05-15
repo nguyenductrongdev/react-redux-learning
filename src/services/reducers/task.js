@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { CREATE_TASK } from 'services/actions/task';
+import { createTask } from 'services/actions/task';
 
 
 const initialState = {
@@ -7,5 +7,5 @@ const initialState = {
 }
 
 export default createReducer(initialState, {
-    [CREATE_TASK]: (state, action) => ({ tasks: state.tasks.concat(action.payload.task) }),
+    [createTask.toString()]: (state, action) => ({ tasks: state.tasks.concat(action.payload.task) }),
 })

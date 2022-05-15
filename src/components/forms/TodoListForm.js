@@ -10,7 +10,7 @@ function TodoListForm({ handleSubmit }) {
 
     const handleOnSubmit = ({ txtTask }) => {
         if (txtTask) {
-            dispatch(createTask(txtTask));
+            dispatch(createTask({ task: txtTask }));
         };
         dispatch(reset('TodoListForm'));
     }

@@ -1,11 +1,11 @@
 import rootReducer from 'services/reducers/';
-import { CREATE_TASK } from 'services/actions/task';
+import { createTask } from 'services/actions/task';
 import { configureStore } from '@reduxjs/toolkit'
 
 
 const replaceMiddleware = store => next => action => {
     const invalidWords = ["fuck", "kill"];
-    if (action.type === CREATE_TASK) {
+    if (action.type === createTask.toString()) {
         action.payload.task = action.payload.task
             .split(" ")
             .map(word => invalidWords.includes(word) ? "***" : word)
