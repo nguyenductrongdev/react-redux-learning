@@ -1,6 +1,7 @@
-import { createStore, applyMiddleware } from 'redux';
 import rootReducer from 'services/reducers/';
-import { CREATE_TASK } from 'services/actions/task'
+import { CREATE_TASK } from 'services/actions/task';
+import { configureStore } from '@reduxjs/toolkit'
+
 
 const replaceMiddleware = store => next => action => {
     const invalidWords = ["fuck", "kill"];
@@ -13,9 +14,9 @@ const replaceMiddleware = store => next => action => {
     return next(action);
 }
 
-const store = createStore(
-    rootReducer,
-    applyMiddleware(replaceMiddleware),
-);
 
-export default store;
+export default configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(replaceMiddleware),
+    devTools: process.env.NODE_ENV !== 'production',
+})
